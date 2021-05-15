@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AddMemberActivity">
+
+
+        <EditText
+            android:id="@+id/amet3"
+            android:layout_width="290dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textWebEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv3"
+            app:layout_constraintTop_toBottomOf="@+id/amtv3" />
+
+        <TextView
+            android:id="@+id/amtv3"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
+            android:text="Email"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv1"
+            app:layout_constraintTop_toBottomOf="@+id/amet2" />
+
+        <EditText
+            android:id="@+id/amet2"
+            android:layout_width="290dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv2"
+            app:layout_constraintTop_toBottomOf="@+id/amtv2" />
+
+        <TextView
+            android:id="@+id/amtv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Contact no."
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintStart_toStartOf="@+id/amtv1"
+            app:layout_constraintTop_toBottomOf="@+id/amet1" />
+
+        <TextView
+            android:id="@+id/amtv"
+            android:layout_width="113dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
+            android:lineSpacingExtra="4dp"
+            android:text="Add Member Details"
+            android:textSize="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.118"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/amtv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
+            android:text="Name"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv"
+            app:layout_constraintTop_toBottomOf="@+id/amtv" />
+
+        <EditText
+            android:id="@+id/amet1"
+            android:layout_width="290dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv1"
+            app:layout_constraintTop_toBottomOf="@+id/amtv1" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.161"
+            app:layout_constraintStart_toStartOf="@+id/amet3"
+            app:layout_constraintTop_toBottomOf="@+id/amtv6">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Other" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/amtv4"
+            android:layout_width="168dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="44dp"
+            android:text="Registration Date"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amet3"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <EditText
+            android:id="@+id/amet4"
+            android:layout_width="113dp"
+            android:layout_height="42dp"
+            android:ems="10"
+            android:hint="dd-mm-yyyy"
+
+            android:inputType="date"
+            app:layout_constraintBottom_toBottomOf="@+id/amtv4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/amtv4"
+            app:layout_constraintTop_toTopOf="@+id/amtv4"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <ImageButton
+            android:id="@+id/IconCal"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_outline_calendar_today_24"
+            app:layout_constraintBottom_toBottomOf="@+id/amet4"
+            app:layout_constraintStart_toEndOf="@+id/amet4"
+            app:layout_constraintTop_toTopOf="@+id/amet4"
+            app:layout_constraintVertical_bias="0.244" />
+
+        <TextView
+            android:id="@+id/amtv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Subscription Pack"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv4"
+            app:layout_constraintTop_toBottomOf="@+id/amtv4" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="1dp"
+            android:popupBackground="#E3A5A5"
+            android:popupElevation="20dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/amtv5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/amtv5"
+            app:layout_constraintTop_toTopOf="@+id/amtv5"
+            app:layout_constraintVertical_bias="0.578" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="189dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="50dp"
+            android:text="Register Member"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv5"
+            app:layout_constraintTop_toBottomOf="@+id/amtv5" />
+
+        <TextView
+            android:id="@+id/amtv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Gender"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/amtv3"
+            app:layout_constraintTop_toBottomOf="@+id/amet3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
