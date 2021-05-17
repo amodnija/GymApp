@@ -65,13 +65,15 @@
 
         <TextView
             android:id="@+id/amtv"
-            android:layout_width="113dp"
+            android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
+            android:elegantTextHeight="true"
             android:lineSpacingExtra="4dp"
             android:text="Add Member Details"
-            android:textSize="27dp"
+            android:textSize="30dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
@@ -136,9 +138,9 @@
 
         <TextView
             android:id="@+id/amtv4"
-            android:layout_width="168dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="60dp"
             android:text="Registration Date"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,12 +150,14 @@
 
         <EditText
             android:id="@+id/amet4"
-            android:layout_width="113dp"
-            android:layout_height="42dp"
+            android:layout_width="116dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="5dp"
             android:ems="10"
             android:hint="dd-mm-yyyy"
-
+            android:gravity="center_horizontal"
             android:inputType="date"
+            android:textColor="@drawable/gradient"
             app:layout_constraintBottom_toBottomOf="@+id/amtv4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -161,23 +165,30 @@
             app:layout_constraintTop_toTopOf="@+id/amtv4"
             app:layout_constraintVertical_bias="0.444" />
 
-        <ImageButton
-            android:id="@+id/IconCal"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="?android:selectableItemBackground"
-            android:src="@drawable/ic_outline_calendar_today_24"
-            app:layout_constraintBottom_toBottomOf="@+id/amet4"
-            app:layout_constraintStart_toEndOf="@+id/amet4"
-            app:layout_constraintTop_toTopOf="@+id/amet4"
-            app:layout_constraintVertical_bias="0.244" />
+
+
+            <ImageButton
+                style="@style/Widget.AppCompat.ActionButton"
+                android:layout_marginTop="3dp"
+
+                android:id="@+id/IconCal"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_outline_calendar_today_24"
+                app:layout_constraintBottom_toBottomOf="@+id/amet4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/amet4"
+                app:layout_constraintTop_toTopOf="@+id/amet4"
+                app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/amtv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:text="Subscription Pack"
+            android:layout_marginTop="60dp"
+            android:text="Membership Period"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -186,12 +197,12 @@
 
         <Spinner
             android:id="@+id/spinner1"
-            android:layout_width="140dp"
-            android:layout_height="45dp"
+            android:layout_width="118dp"
+            android:layout_height="44dp"
             android:layout_marginBottom="1dp"
-            android:popupBackground="#E3A5A5"
+            android:gravity="left"
             android:popupElevation="20dp"
-
+            android:textAlignment="gravity"
             app:layout_constraintBottom_toBottomOf="@+id/amtv5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -214,7 +225,7 @@
             android:id="@+id/amtv6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="40dp"
             android:text="Gender"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
