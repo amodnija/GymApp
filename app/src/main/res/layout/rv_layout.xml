@@ -20,30 +20,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-
-                android:id="@+id/imageCard"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:cardBackgroundColor="#D4CBDF"
-                app:cardCornerRadius="250dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.08"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5">
-
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:background="@drawable/img"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/iv"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.08"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+   />
 
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/person_icon" />
 
-
-            </androidx.cardview.widget.CardView>
 
 
             <TextView
@@ -56,15 +47,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.139"
-                app:layout_constraintStart_toEndOf="@+id/imageCard"
-                app:layout_constraintTop_toTopOf="@+id/imageCard"
+                app:layout_constraintStart_toEndOf="@+id/iv"
+                app:layout_constraintTop_toTopOf="@+id/iv"
                 app:layout_constraintVertical_bias="0.289" />
 
             <ImageButton
                 android:id="@+id/editbutton"
                 style="@style/Widget.AppCompat.ActionButton"
-                android:layout_width="34dp"
-                android:layout_height="49dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="34dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="37dp"

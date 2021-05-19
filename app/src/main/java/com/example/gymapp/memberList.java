@@ -73,7 +73,7 @@ public class memberList extends AppCompatActivity {
                         else{
 
 
-                            Toast.makeText(memberList.this, "No member found", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(memberList.this, "No member found. Please Add a member first", Toast.LENGTH_LONG).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -95,12 +95,14 @@ public class memberList extends AppCompatActivity {
             }
         });
 
-        /*edit.setOnClickListener(new View.OnClickListener() {
+       /* edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editMember();
+                MemberEdit();
             }
-        });*/
+        });
+
+        */
 
 
 
