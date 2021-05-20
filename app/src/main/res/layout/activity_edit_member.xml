@@ -28,26 +28,29 @@
         <EditText
             android:id="@+id/emet1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="5dp"
             android:hint="contact no."
+            android:inputType="phone"
             android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/emtv1"
-            app:layout_constraintTop_toBottomOf="@+id/emtv2" />
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
         <EditText
             android:id="@+id/emet2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="5dp"
             android:hint="email"
             android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/emtv1"
-            app:layout_constraintTop_toBottomOf="@+id/emet1" />
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
         <TextView
             android:id="@+id/emtv2"
@@ -64,7 +67,7 @@
 
         <TextView
             android:id="@+id/emtv3"
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:hint="ID"
@@ -127,6 +130,28 @@
                 android:scaleType="centerCrop"
             />
         </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/emtv2"
+            app:layout_constraintTop_toBottomOf="@+id/emtv2"
+            app:srcCompat="@drawable/phone_icon" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/emet1"
+            app:srcCompat="@drawable/email_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

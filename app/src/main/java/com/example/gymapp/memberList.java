@@ -46,7 +46,7 @@ public class memberList extends AppCompatActivity {
         edit = findViewById(R.id.editbutton);
 
     try {
-        db.collection("members").get()
+        db.collection("members").orderBy("time").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -80,7 +80,7 @@ public class memberList extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
 
-                Toast.makeText(memberList.this, "Failed to get the data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(memberList.this, "Failed to get the data. Check Internet connection", Toast.LENGTH_SHORT).show();
             }
         });
     }catch(@Nullable Exception e)

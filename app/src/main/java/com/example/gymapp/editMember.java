@@ -140,10 +140,12 @@ public class editMember extends AppCompatActivity {
                                             public void onSuccess(Void aVoid) {
                                                 FirebaseStorage storage = FirebaseStorage.getInstance();
                                                 StorageReference ref = storage.getReference();
-                                                ref.child("/images"+id.toString()).delete();
+                                                ref.child("images/"+id.toString()+".jpg").delete();
                                                 Toast.makeText(editMember.this, "Member successfully deleted", Toast.LENGTH_SHORT).show();
 
                                                 showMembers();
+
+
 
 
 
@@ -232,6 +234,7 @@ public class editMember extends AppCompatActivity {
     {
         Intent i = new Intent(this,memberList.class);
         startActivity(i);
+        this.finish();
     }
     public static boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());

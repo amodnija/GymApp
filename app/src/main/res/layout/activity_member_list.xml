@@ -8,12 +8,13 @@
     android:stateListAnimator="@null"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".memberList"
+    android:background="#EBE6E6"
+
     >
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv"
@@ -29,22 +30,23 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="67dp"
         app:srcCompat="@drawable/add_icon" />
 
     <TextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:textStyle="bold"
+        android:layout_height="77dp"
+        android:paddingLeft="10dp"
+        android:textColor="#4C4B4B"
         android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/round_corner"
         android:gravity="left"
-        android:paddingHorizontal="20dp"
-        android:layout_marginStart="0dp"
-        android:background="@color/white"
-        android:text="Members" />
+        android:text="Members"
+        android:textSize="50dp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

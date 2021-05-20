@@ -1,4 +1,4 @@
-package com.example.gymapp;
+ package com.example.gymapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -27,6 +27,7 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -39,6 +40,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -159,10 +161,13 @@ public class AddMemberActivity extends AppCompatActivity {
         generateID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 check = true;
+                Map<String, Object> member = new HashMap<>();
+
                 r = findViewById(rg.getCheckedRadioButtonId());
 
-                if (name.getText().toString() == "" || phone.getText().toString().length() == 0 || email.getText().toString().length() == 0 || TextUtils.isEmpty(date.getText().toString())) {
+                if (name.getText().toString().length() == 0 || phone.getText().toString().length() == 0 || email.getText().toString().length() == 0 || TextUtils.isEmpty(date.getText().toString())) {
                     Toast.makeText(AddMemberActivity.this, "One or more required fields is empty!", Toast.LENGTH_LONG).show();
                     check = false;
                 }
@@ -178,98 +183,97 @@ public class AddMemberActivity extends AppCompatActivity {
                 Phone = phone.getText().toString();
                 Email = email.getText().toString();
 
-               // if (check) {
 
-                  /*  db.collection("members").whereEqualTo("phone", Phone)
+
+                    db.collection("members").whereEqualTo("phone", Phone)
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
+                                        //  check = false;
+                                        //  Toast.makeText(AddMemberActivity.this, "This Mobile number is already registered", Toast.LENGTH_SHORT).show();
+
                                         for (QueryDocumentSnapshot document : task.getResult()) {
-                                            if(document.getString("phone")==Phone)
-                                            {
+                                            if (document.getString("phone") == Phone) {
                                                 Toast.makeText(AddMemberActivity.this, "This Mobile number is already registered", Toast.LENGTH_SHORT).show();
                                                 check = false;
+                                                b.setEnabled(false);
+
                                             }
                                         }
-                                    }
-                                    else{
-
-                                    }
 
 
-                                }
-                            });*/
+                                        if (check == true) {
 
 
-
-                if (check == true) {
-
-                    Map<String, Object> member = new HashMap<>();
-                    member.put("name", Name);
-                    member.put("phone", Phone);
-                    member.put("email", Email);
-                    member.put("gender", r.getText().toString());
-                    member.put("dor", date.getText().toString());
-                    member.put("pack", sp.getSelectedItem().toString());
-                    member.put("time", FieldValue.serverTimestamp());
+                                            member.put("name", Name);
+                                            member.put("phone", Phone);
+                                            member.put("email", Email);
+                                            member.put("gender", r.getText().toString());
+                                            member.put("dor", date.getText().toString());
+                                            member.put("pack", sp.getSelectedItem().toString());
+                                            member.put("time", FieldValue.serverTimestamp());
 
 
-                    db.collection("members").orderBy("time", Query.Direction.DESCENDING).limit(1).get()
-                            .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                @Override
-                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            db.collection("members").orderBy("time", Query.Direction.DESCENDING).limit(1).get()
+                                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                                        @Override
+                                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                                    if (!queryDocumentSnapshots.isEmpty()) {
+                                                            if (!queryDocumentSnapshots.isEmpty()) {
 
-                                        List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                                        for (DocumentSnapshot d : list) {
+                                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                                for (DocumentSnapshot d : list) {
 
-                                            if (d.getString("id") == null || d.getString("id") == "")
-                                                id = 0;
-                                            else
-                                                id = Integer.parseInt(d.getString("id"));
-                                            id++;
-                                            member.put("id", id.toString());
-                                            showID.setText(id.toString());
-                                            b.setEnabled(true);
+                                                                    if (d.getString("id") == null || d.getString("id") == "")
+                                                                        id = 0;
+                                                                    else
+                                                                        id = Integer.parseInt(d.getString("id"));
+                                                                    id++;
+                                                                    member.put("id", id.toString());
+                                                                    showID.setText(id.toString());
+                                                                    b.setEnabled(true);
 
 
-                                        }
-                                    } else {
-                                        id = 1;
-                                        member.put("id", id.toString());
-                                        showID.setText(id.toString());
-                                        b.setEnabled(true);
+                                                                }
+                                                            } else {
+                                                                id = 1;
+                                                                member.put("id", id.toString());
+                                                                showID.setText(id.toString());
+                                                                b.setEnabled(true);
 
-                                    }
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                                                            }
+                                                        }
+                                                    }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
                             /*id = 1;
                             member.put("id", id.toString());
                             showID.setText(id.toString());
                             b.setEnabled(true);*/
-                        }
-                    });
+                                                }
+                                            });
 
+                                        }
+
+                                    }
+                                }});
 
                     b.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
 
                             db.collection("members").document(showID.getText().toString()).set(member)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(AddMemberActivity.this, "Member added successfully", Toast.LENGTH_SHORT).show();
-                                    uploadImage();
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(AddMemberActivity.this, "Member added successfully", Toast.LENGTH_SHORT).show();
+                                            uploadImage();
 
-                                    home();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
+                                            home();
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Toast.makeText(AddMemberActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
@@ -282,10 +286,16 @@ public class AddMemberActivity extends AppCompatActivity {
                     });
                     // id = 0 ?;
 
-
                 }
-            }
+
+
+
+
         });
+
+
+
+
 
         datepicklistener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -304,6 +314,7 @@ public class AddMemberActivity extends AppCompatActivity {
     public void home() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     public void showMembers() {
@@ -327,7 +338,7 @@ public class AddMemberActivity extends AppCompatActivity {
                     startActivityForResult(takePicture, 0);
 
                 } else if (options[item].equals("Choose from Gallery")) {
-                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(pickPhoto, 1);
 
                 } else if (options[item].equals("Cancel")) {
@@ -356,7 +367,7 @@ public class AddMemberActivity extends AppCompatActivity {
                 case 1:
                     if (resultCode == RESULT_OK && data != null) {
                          filePath = data.getData();
-                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                       /* String[] filePathColumn = {MediaStore.Images.Media.DATA};
                         if (filePath != null) {
                             Cursor cursor = getContentResolver().query(filePath,
                                     filePathColumn, null, null, null);
@@ -364,11 +375,28 @@ public class AddMemberActivity extends AppCompatActivity {
                                 ((Cursor) cursor).moveToFirst();
 
                                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                                String picturePath = cursor.getString(columnIndex);
-                                addpic.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                                String picturePath = cursor.getString(columnIndex);*/
+                                try {
+
+                                    // Setting image on image view using Bitmap
+                                    Bitmap bitmap = MediaStore
+                                            .Images
+                                            .Media
+                                            .getBitmap(
+                                                    getContentResolver(),
+                                                    filePath);
+                                    //Setting image using Glide
+                                    Glide.with(this).load(filePath.toString()).into(addpic);
+                                    //addpic.setImageBitmap(bitmap);
+                                }
+
+                                catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                              /*  addpic.setImageBitmap(BitmapFactory.decodeFile(picturePath));
                                 cursor.close();
                             }
-                        }
+                        }*/
 
                     }
                     break;
@@ -432,13 +460,11 @@ public class AddMemberActivity extends AppCompatActivity {
     {
         if (filePath != null) {
 
-            // Code for showing progressDialog while uploading
             ProgressDialog progressDialog
                     = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
-            // Defining the child of storageReference
             StorageReference ref
                     = storageReference
                     .child("images/"+ id.toString()+".jpg");
@@ -484,16 +510,21 @@ public class AddMemberActivity extends AppCompatActivity {
         {
             Bitmap bitmap = addpic.getDrawingCache();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            selectedImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            try {
+                selectedImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+
             byte[] data = baos.toByteArray();
             StorageReference ref
                     = storageReference
                     .child("images/"+ id.toString()+".jpg");
             ref.putBytes(data);
+            }catch(Exception e)
+            {
+
+            }
 
         }
     }
-    String currentPhotoPath;
 
 
 }
