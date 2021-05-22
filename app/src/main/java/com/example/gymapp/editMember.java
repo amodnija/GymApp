@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +52,7 @@ public class editMember extends AppCompatActivity {
     ImageView photo;
     Integer id;
     Boolean check;
+    Spinner sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,9 +70,15 @@ public class editMember extends AppCompatActivity {
         idno = findViewById(R.id.emtv3);
         delete = findViewById(R.id.del);
         save = findViewById(R.id.savebutton);
+        sp = findViewById(R.id.spinner);
          check = true;
+        String[] TR = {"None", "TR 1", "TR 2", "TR 3"};
+
+        ArrayAdapter ad = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, TR);
+        sp.setAdapter(ad);
 
         StorageReference ref = FirebaseStorage.getInstance().getReference().child("images/"+id.toString()+".jpg");
+
 
         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -111,6 +120,12 @@ public class editMember extends AppCompatActivity {
                             email.setText(d.getString("email"));
                             phone.setText(d.getString("phone"));
                             idno.setText("Membership ID: "+d.getString("id"));
+                            if (d.getString("routine") != null) {
+                                int spinnerPosition = ad.getPosition(d.getString("routine"));
+                                sp.setSelection(spinnerPosition);
+                            }
+                            else
+                                sp.setSelection(0);
 
 
 
@@ -125,6 +140,8 @@ public class editMember extends AppCompatActivity {
                 Toast.makeText(editMember.this, "Failed to get the data.", Toast.LENGTH_SHORT).show();
             }
         });
+
+
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,9 +163,6 @@ public class editMember extends AppCompatActivity {
                                                 showMembers();
 
 
-
-
-
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
@@ -168,11 +182,12 @@ public class editMember extends AppCompatActivity {
                 };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(editMember.this);
-                builder.setMessage("Delete Member?").setPositiveButton("Delete", dialogClickListener)
+                builder.setMessage("Permanently Delete Member?").setPositiveButton("Delete", dialogClickListener)
                         .setNegativeButton("Cancel", dialogClickListener).show();
 
             }
         });
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,8 +209,10 @@ public class editMember extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which){
                             case DialogInterface.BUTTON_POSITIVE:
+                                String tr = sp.getSelectedItem().toString();
+
                                 db.collection("members").document(id.toString())
-                                        .update("phone",phone.getText().toString(),"email",email.getText().toString())
+                                        .update("phone",phone.getText().toString(),"email",email.getText().toString(),"routine",tr)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
@@ -223,7 +240,7 @@ public class editMember extends AppCompatActivity {
                     }
                 };
                     AlertDialog.Builder builder = new AlertDialog.Builder(editMember.this);
-                    builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+                    builder.setMessage("Save your changes?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
             }
 

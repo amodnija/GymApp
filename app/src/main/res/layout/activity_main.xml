@@ -119,4 +119,19 @@
         app:layout_constraintVertical_bias="0.086"
         app:rippleColor="#FBF6F6" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="15dp"
+        android:text="Routines"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

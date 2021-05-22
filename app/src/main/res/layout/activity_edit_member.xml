@@ -98,13 +98,13 @@
             android:id="@+id/savebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="188dp"
             android:text="Save Changes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/emet2"
-            app:layout_constraintTop_toBottomOf="@+id/emet2" />
+            app:layout_constraintStart_toStartOf="@+id/emtv4"
+            app:layout_constraintTop_toBottomOf="@+id/emtv4" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/myCardView"
@@ -152,6 +152,29 @@
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/emet1"
             app:srcCompat="@drawable/email_icon" />
+
+        <TextView
+            android:id="@+id/emtv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Training Routine"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/emet2" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/emtv4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toEndOf="@+id/emtv4"
+            app:layout_constraintTop_toTopOf="@+id/emtv4" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
