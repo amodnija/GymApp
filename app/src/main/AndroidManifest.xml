@@ -11,12 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymApp">
-        <activity android:name=".Signup_page"></activity>
-        <activity android:name=".loginpage" />
-        <activity android:name=".Trainingroutines" />
-        <activity android:name=".Memberlist" />
-        <activity android:name=".NewUser" />
-        <activity android:name=".Dashboard" />
         <activity android:name=".routineInfo"></activity>
         <activity android:name=".TrainingRoutines" >
         </activity>
