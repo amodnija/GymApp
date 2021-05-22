@@ -39,6 +39,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         password = findViewById(R.id.edttxtpswd);
         loginbtn.setOnClickListener(this);
         txtsgnup.setOnClickListener(this);
+        txtforpas.setOnClickListener(this);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -50,6 +52,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.loginbtn:
                 userLogin();
                 break;
+            case R.id.txtforpas:
+                startActivity(new Intent(this, ForgotPassword.class));
+                break;
         }
 
     }
@@ -59,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String pswd = password.getText().toString().trim();
 
         if(emailstr.isEmpty()) {
-            email.setError("Username is required!");
+            email.setError("Email is required!");
             email.requestFocus();
             return;
         }

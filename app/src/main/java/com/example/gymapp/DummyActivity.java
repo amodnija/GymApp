@@ -23,6 +23,7 @@ public class DummyActivity extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String UserID;
+    private Button logout;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,16 @@ public class DummyActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         UserID = user.getUid();
+
+        logout = findViewById((R.id.signOut));
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(DummyActivity.this, LoginActivity.class));
+            }
+        });
 
         addstaff.setOnClickListener(new View.OnClickListener() {
             @Override

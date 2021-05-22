@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymApp">
+        <activity android:name=".ForgotPassword"></activity>
         <activity android:name=".RegisterStaffActivity" />
         <activity android:name=".DummyActivity" />
         <activity android:name=".MainActivity" />
