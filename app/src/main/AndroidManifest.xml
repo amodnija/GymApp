@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gymapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,14 +14,27 @@
         <activity android:name=".ForgotPassword"></activity>
         <activity android:name=".RegisterStaffActivity" />
         <activity android:name=".DummyActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
-            <intent-filter>
+           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".routineInfo"></activity>
+        <activity android:name=".TrainingRoutines" >
+        </activity>
+        <activity android:name=".editMember" />
+        <activity android:name=".memberList" />
+        <activity android:name=".AddMemberActivity" />
+        <activity android:name=".MainActivity">
+           
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
