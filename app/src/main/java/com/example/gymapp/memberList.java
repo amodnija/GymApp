@@ -50,6 +50,8 @@ public class memberList extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                              //  Toast.makeText(memberList.this, "Loading", Toast.LENGTH_SHORT).show();
+
                                 if (!queryDocumentSnapshots.isEmpty()) {
 
                                     List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
@@ -60,7 +62,6 @@ public class memberList extends AppCompatActivity {
 
 
                                     }
-                                    Toast.makeText(memberList.this, "Data fetched", Toast.LENGTH_SHORT).show();
 
 
                                     String[] fin = names.toArray(new String[names.size()]);

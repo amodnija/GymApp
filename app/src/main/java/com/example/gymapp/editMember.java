@@ -256,4 +256,13 @@ public class editMember extends AppCompatActivity {
     public static boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
+
+    public void onBackPressed()
+    {
+
+        this.startActivity(new Intent(editMember.this,memberList.class));
+        finish();
+
+        return;
+    }
 }

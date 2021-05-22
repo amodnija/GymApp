@@ -65,7 +65,7 @@ public class routineInfo extends AppCompatActivity {
             case "TR 1":
                 TV.setText("Training Routine 1");
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    tv.setText(Html.fromHtml("<pre><b>Cardio</b>        M    Th   <br><b>Upper Body</b> T    Fr   <br><b>Legs</b>        W    Sat   <br></pre>", Html.FROM_HTML_MODE_COMPACT));
+                    tv.setText(Html.fromHtml("<pre><b>Mon Thu : </b> Upper Body <br><br><b>Tue    Fri : </b> Cardio   <br><br><b> Wed    Sat : </b> Legs <br><br></pre>", Html.FROM_HTML_MODE_COMPACT));
                 } else {
                     tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
                 }
@@ -73,10 +73,20 @@ public class routineInfo extends AppCompatActivity {
 
             case "TR 2":
                 TV.setText("Training Routine 2");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    tv.setText(Html.fromHtml("<pre><b>Mon Thu : </b> Legs <br><br><b>Tue    Fri : </b> Upper Body   <br><br><b> Wed    Sat : </b> Cardio<br><br></pre>", Html.FROM_HTML_MODE_COMPACT));
+                } else {
+                    tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+                }
                 break;
 
             case "TR 3":
                 TV.setText("Training Routine 3");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    tv.setText(Html.fromHtml("<pre><b>Mon Thu : </b> Cardio <br><br><b>Tue    Fri : </b> Legs   <br><br><b> Wed    Sat : </b> Upper Body<br><br></pre>", Html.FROM_HTML_MODE_COMPACT));
+                } else {
+                    tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+                }
                 break;
 
 
