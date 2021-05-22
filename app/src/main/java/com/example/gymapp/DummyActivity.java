@@ -54,7 +54,6 @@ public class DummyActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(DummyActivity.this, "You're not an admin!", Toast.LENGTH_LONG).show();
                             }
-
                         }
                     }
 

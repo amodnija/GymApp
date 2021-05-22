@@ -7,12 +7,63 @@
     tools:context=".RegisterStaffActivity">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/credtxtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="vjv,"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="EnterStaffCredentials"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/emailedttxt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/emailedttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/pswdedttxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/credtxtview" />
+
+    <Button
+        android:id="@+id/stafflregbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminswitch" />
+
+    <Switch
+        android:id="@+id/adminswitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grant admin privileges"
+        app:layout_constraintBottom_toTopOf="@+id/stafflregbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pswdedttxt" />
+
+    <EditText
+        android:id="@+id/pswdedttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/adminswitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailedttxt" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
