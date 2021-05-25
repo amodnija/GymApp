@@ -13,6 +13,7 @@
         app:cardCornerRadius="10dp"
         android:layout_marginVertical="3dp"
         android:layout_marginHorizontal="10dp"
+        android:backgroundTint="#F17752"
         android:outlineAmbientShadowColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,29 +23,29 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:backgroundTint="#E8E6E6">
 
-<androidx.cardview.widget.CardView
-    android:layout_width="80dp"
-    android:layout_height="80dp"
-    app:cardCornerRadius="90dp"
-    android:id="@+id/CardView"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.08"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.5">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="90dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.08"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
 
                 <ImageView
-                    android:src="@drawable/person_icon"
+                    android:id="@+id/iv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/iv"
                     android:scaleType="centerCrop"
+                    android:src="@drawable/person_icon"
 
-   />
-</androidx.cardview.widget.CardView>
+                    />
+            </androidx.cardview.widget.CardView>
 
 
             <TextView
@@ -52,8 +53,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_medium"
                 android:hint="name"
-                android:textColor="@color/black"
+                android:textColor="#4C4B4B"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -71,14 +73,14 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="37dp"
                 android:background="?android:selectableItemBackground"
-                android:tint="#00796B"
+                android:tint="#4C4B4B"
                 app:cornerRadius="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintHorizontal_bias="0.952"
                 app:layout_constraintStart_toEndOf="@+id/CardView"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.947"
+                app:layout_constraintVertical_bias="0.421"
                 app:srcCompat="@drawable/edit_icon" />
 
             <TextView
@@ -86,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="id"
+                android:textColor="#4C4B4B"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +101,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="ID: "
+                android:textColor="#4C4B4B"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/CardView"
                 app:layout_constraintStart_toStartOf="@+id/name"

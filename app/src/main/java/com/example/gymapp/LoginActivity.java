@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -27,12 +29,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText email, password;
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
 
         loginbtn = findViewById(R.id.loginbtn);
-        AppName = findViewById(R.id.AppName);
+        //AppName = findViewById(R.id.AppName);
         txtforpas = findViewById(R.id.txtforpas);
         txtsgnup = findViewById(R.id.txtsgnup);
         email = findViewById(R.id.edttxtun);
@@ -92,7 +97,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this, DummyActivity.class));
+                    startActivity(new Intent(LoginActivity.this, Dashboard.class));
+                    finish();
 
                 }else{
                     Toast.makeText(LoginActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
