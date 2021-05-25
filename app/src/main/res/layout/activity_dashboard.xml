@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E6E6"
+    android:textAlignment="center"
+    tools:context=".Dashboard">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="140dp"
+        android:layout_height="125dp"
+        android:backgroundTint="#4C4B4B"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Training Routines"
+        android:textAlignment="center"
+        android:textColor="#E8E6E6"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintTop_toTopOf="@+id/button8" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Dashboard"
+        android:textAlignment="center"
+        android:textColor="#4C4B4B"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="140dp"
+        android:layout_height="125dp"
+        android:backgroundTint="#4C4B4B"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Add Member"
+        android:textAlignment="center"
+        android:textColor="#E8E6E6"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="140dp"
+        android:layout_height="125dp"
+        android:backgroundTint="#4C4B4B"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Member List"
+        android:textAlignment="center"
+        android:textColor="#E8E6E6"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.519" />
+
+    <Button
+        android:id="@+id/signOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EC4141"
+        android:drawableLeft="@drawable/power"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Logout"
+        android:textColor="#4C4B4B"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintVertical_bias="0.635" />
+
+    <Button
+        android:id="@+id/addstaffbtn"
+        android:layout_width="140dp"
+        android:layout_height="125dp"
+        android:backgroundTint="#4C4B4B"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Add staff"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintTop_toTopOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

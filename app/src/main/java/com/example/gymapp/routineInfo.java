@@ -14,6 +14,8 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -48,6 +50,8 @@ public class routineInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_routine_info);
         Bundle bun = getIntent().getExtras();
         trno="None";
@@ -65,7 +69,7 @@ public class routineInfo extends AppCompatActivity {
             case "TR 1":
                 TV.setText("Training Routine 1");
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    tv.setText(Html.fromHtml("<pre><b>Cardio</b>        M    Th   <br><b>Upper Body</b> T    Fr   <br><b>Legs</b>        W    Sat   <br></pre>", Html.FROM_HTML_MODE_COMPACT));
+                    tv.setText(Html.fromHtml("<pre><b>Monday Thursday : </b> Upper Body <br><br><b>Tuesday    Friday : </b> Cardio   <br><br><b> Wednesday    Saturday : </b> Legs <br><br></pre>", Html.FROM_HTML_MODE_COMPACT));
                 } else {
                     tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
                 }
@@ -73,10 +77,20 @@ public class routineInfo extends AppCompatActivity {
 
             case "TR 2":
                 TV.setText("Training Routine 2");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    tv.setText(Html.fromHtml("<pre><b>Monday Thursday : </b> Legs <br><br><b>Tuesday    Friday : </b> Upper Body   <br><br><b> Wednesday    Saturday : </b> Cardio<br><br></pre>", Html.FROM_HTML_MODE_COMPACT));
+                } else {
+                    tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+                }
                 break;
 
             case "TR 3":
                 TV.setText("Training Routine 3");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    tv.setText(Html.fromHtml("<pre><b>Monday Thursday : </b> Cardio <br><br><b>Tuesday    Friday : </b> Legs   <br><br><b> Wednesday    Saturday : </b> Upper Body<br><br></pre>", Html.FROM_HTML_MODE_COMPACT));
+                } else {
+                    tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+                }
                 break;
 
 

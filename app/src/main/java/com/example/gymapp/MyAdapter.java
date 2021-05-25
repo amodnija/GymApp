@@ -1,5 +1,6 @@
 package com.example.gymapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
@@ -65,16 +66,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.viewholder> {
         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                // Got the download URL for 'users/me/profile.png'
-                RequestOptions requestOptions = new RequestOptions();
-                requestOptions.placeholder(R.drawable.person_icon);
-                requestOptions.error(R.drawable.person_icon);
-                requestOptions.diskCacheStrategy(DiskCacheStrategy.DATA);
-                GlideApp.with(holder.itemView)
-                        .load(uri.toString())
-                        .diskCacheStrategy(DiskCacheStrategy.DATA)
-                        .dontAnimate()
-                        .into(holder.img);
+                if(uri!=null) {
+                    // Got the download URL for 'users/me/profile.png'
+                    RequestOptions requestOptions = new RequestOptions();
+                    requestOptions.placeholder(R.drawable.person_icon);
+                    requestOptions.error(R.drawable.person_icon);
+                    requestOptions.diskCacheStrategy(DiskCacheStrategy.DATA);
+                    GlideApp.with(holder.itemView)
+                            .load(uri.toString())
+                            .diskCacheStrategy(DiskCacheStrategy.DATA)
+                            .dontAnimate()
+                            .into(holder.img);
+                }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -110,6 +113,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.viewholder> {
                 public void onClick(View v) {
 
                     memberEdit(idtv.getText().toString());
+
                 }
             });
             ib.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +133,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.viewholder> {
             b.putString("id",s); //member id
             intent.putExtras(b);
             itemView.getContext().startActivity(intent);
+            ((Activity)itemView.getContext()).finish();
+
         }
 
 

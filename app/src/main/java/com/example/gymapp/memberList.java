@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -39,7 +41,10 @@ public class memberList extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
             setContentView(R.layout.activity_member_list);
+
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             rv = findViewById(R.id.rv);
             fb = findViewById(R.id.fab);
@@ -50,6 +55,8 @@ public class memberList extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                              //  Toast.makeText(memberList.this, "Loading", Toast.LENGTH_SHORT).show();
+
                                 if (!queryDocumentSnapshots.isEmpty()) {
 
                                     List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
@@ -60,7 +67,6 @@ public class memberList extends AppCompatActivity {
 
 
                                     }
-                                    Toast.makeText(memberList.this, "Data fetched", Toast.LENGTH_SHORT).show();
 
 
                                     String[] fin = names.toArray(new String[names.size()]);

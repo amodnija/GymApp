@@ -8,6 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#EC4141"
         android:focusable="true"
         android:focusableInTouchMode="true"
         tools:context=".editMember">
@@ -19,6 +20,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="30dp"
             android:hint="Name, gender"
+            android:textColor="#4C4B4B"
             android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -32,6 +34,7 @@
             android:layout_marginStart="5dp"
             android:hint="contact no."
             android:inputType="phone"
+            android:textColor="#4C4B4B"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:hint="email"
+            android:textColor="#4C4B4B"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Date of Registration"
+            android:textColor="#4C4B4B"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -71,6 +76,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:hint="ID"
+            android:textColor="#4C4B4B"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -100,7 +106,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="188dp"
+            android:backgroundTint="#EC4141"
             android:text="Save Changes"
+            app:cornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/emtv4"
@@ -126,9 +134,8 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/person_icon"
                 android:scaleType="centerCrop"
-            />
+                android:src="@drawable/person_icon" />
         </androidx.cardview.widget.CardView>
 
         <ImageView
@@ -159,6 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Training Routine"
+            android:textColor="#4C4B4B"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
