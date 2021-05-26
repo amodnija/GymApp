@@ -75,7 +75,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Dashboard.this, LoginActivity.class));
+                Logout();
             }
         });
 
@@ -94,7 +94,7 @@ public class Dashboard extends AppCompatActivity {
                             Log.d("role", role);
 
                             if (role.equals("admin")) {
-                                startActivity(new Intent(Dashboard.this, RegisterStaffActivity.class));
+                                addstaff();
                             } else {
                                 Toast.makeText(Dashboard.this, "You're not an admin!", Toast.LENGTH_LONG).show();
                             }
@@ -126,9 +126,17 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addstaff()
+    {
+        Intent i = new Intent(Dashboard.this, RegisterStaffActivity.class);
+        startActivity(i);
+
+    }
+
     public void Logout()
     {
-        Intent intent = new Intent(this,memberList.class);
+        Intent intent = new Intent(this,LoginActivity.class);
         startActivity(intent);
+        finish();
     }
 }

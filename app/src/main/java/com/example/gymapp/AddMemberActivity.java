@@ -177,10 +177,12 @@ public class AddMemberActivity extends AppCompatActivity {
                 }
                 if (phone.getText().toString().length() != 10) {
                     phone.setError("Mobile number is invalid");
+                    phone.requestFocus();
                     check = false;
                 }
                 if (!(isValidEmail(email.getText().toString()))) {
                     email.setError("Email ID is invalid");
+                    email.requestFocus();
                     check = false;
                 }
                 Name = name.getText().toString();
@@ -246,6 +248,7 @@ public class AddMemberActivity extends AppCompatActivity {
                                                                 member.put("id", id.toString());
                                                                 showID.setText(id.toString());
                                                                 b.setEnabled(true);
+
 
                                                             }
                                                         }
@@ -316,7 +319,7 @@ public class AddMemberActivity extends AppCompatActivity {
     }
 
     public void home() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
         this.finish();
     }

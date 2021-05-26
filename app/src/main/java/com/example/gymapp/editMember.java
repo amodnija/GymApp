@@ -108,7 +108,14 @@ public class editMember extends AppCompatActivity {
 
 
         SimpleDateFormat sdf;
+
         sdf = new SimpleDateFormat("dd/mm/yyyy");
+        try {
+            Date d = sdf.parse(dor.getText().toString());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("members").whereEqualTo("id",id.toString()).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

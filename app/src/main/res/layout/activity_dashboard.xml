@@ -99,6 +99,7 @@
         android:backgroundTint="#4C4B4B"
         android:fontFamily="@font/poppins_medium"
         android:text="Add staff"
+        android:textColor="#E8E6E6"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"

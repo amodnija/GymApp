@@ -72,14 +72,14 @@ public class RegisterStaffActivity extends AppCompatActivity {
                 }
 
                 if (pswd.isEmpty()) {
-                    emailtxt.setError("Password is required!");
-                    emailtxt.requestFocus();
+                    pswdtxt.setError("Password is required!");
+                    pswdtxt.requestFocus();
                     return;
                 }
 
                 if (pswd.length() < 6) {
-                    emailtxt.setError("Password should be at least 6 characters!");
-                    emailtxt.requestFocus();
+                    pswdtxt.setError("Password should be at least 6 characters!");
+                    pswdtxt.requestFocus();
                     return;
                 }
 

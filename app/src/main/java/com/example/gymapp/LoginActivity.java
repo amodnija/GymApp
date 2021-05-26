@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,13 +31,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ProgressBar progbar;
     private EditText email, password;
 
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+       // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            startActivity(new Intent(this, Dashboard.class));
+            finish();
+        }
 
         loginbtn = findViewById(R.id.loginbtn);
         //AppName = findViewById(R.id.AppName);
@@ -81,14 +91,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         if(pswd.isEmpty()) {
-            email.setError("Password is required!");
-            email.requestFocus();
+            password.setError("Password is required!");
+            password.requestFocus();
             return;
         }
 
         if(pswd.length() < 6) {
-            email.setError("Password should be at least 6 characters!");
-            email.requestFocus();
+            password.setError("Password should be at least 6 characters!");
+            password.requestFocus();
             return;
         }
 
