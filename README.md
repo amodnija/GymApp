@@ -19,3 +19,9 @@ Made with :heart: and :muscle: by Amod, Bhavya and Siddh
 * Amod Nijasure : Sign in and Authentication  
 * Bhavya Somani : UI/UX  
 * Siddh Gosar : Database Management (Adding members, Member List and Training Routine Management)  
+
+
+## Learnings
+We learned to use various tools for Native Android App Development such as Recyclerviews, Firebase Authentication, Database Management (both Firestore and RTDB) and Figma Basics along with numerous XML features which helped us in making a more aesthetic and responsive UI/UX. We also made a conscious effort to follow good development practices like using Git/Github as effeciently as possible and working as a team with proper task division.
+
+Lastly a Big Thanks to our mentor Ayush Sharma bhaiya for guiding and helping us throughout our DevSoc journey till date.
