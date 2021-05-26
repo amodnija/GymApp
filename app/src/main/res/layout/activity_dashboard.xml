@@ -15,6 +15,8 @@
         android:backgroundTint="#4C4B4B"
         android:fontFamily="@font/poppins_medium"
         android:text="Training Routines"
+        android:textAllCaps="false"
+
         android:textAlignment="center"
         android:textColor="#E8E6E6"
         app:cornerRadius="10dp"
@@ -44,6 +46,8 @@
         android:id="@+id/button4"
         android:layout_width="140dp"
         android:layout_height="125dp"
+        android:textAllCaps="false"
+
         android:backgroundTint="#4C4B4B"
         android:fontFamily="@font/poppins_medium"
         android:text="Add Member"
@@ -64,6 +68,8 @@
         android:backgroundTint="#4C4B4B"
         android:fontFamily="@font/poppins_medium"
         android:text="Member List"
+        android:textAllCaps="false"
+
         android:textAlignment="center"
         android:textColor="#E8E6E6"
         app:cornerRadius="10dp"
@@ -78,11 +84,12 @@
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#EC4141"
+        android:backgroundTint="#E64A19"
         android:drawableLeft="@drawable/power"
+        android:drawableTint="@color/white"
         android:fontFamily="@font/poppins_medium"
         android:text="Logout"
-        android:textColor="#4C4B4B"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,6 +102,8 @@
     <Button
         android:id="@+id/addstaffbtn"
         android:layout_width="140dp"
+        android:textAllCaps="false"
+
         android:layout_height="125dp"
         android:backgroundTint="#4C4B4B"
         android:fontFamily="@font/poppins_medium"

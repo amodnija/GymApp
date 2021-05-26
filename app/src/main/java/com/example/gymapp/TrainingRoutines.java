@@ -1,6 +1,7 @@
 package com.example.gymapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class TrainingRoutines extends AppCompatActivity {
 
@@ -16,8 +18,7 @@ public class TrainingRoutines extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_training_routines);
 
         cv1 = findViewById(R.id.cardView1);
@@ -49,6 +50,8 @@ public class TrainingRoutines extends AppCompatActivity {
     }
     public void showinfo(String s)
     {
+        Toast.makeText(TrainingRoutines.this, "Loading Data", Toast.LENGTH_SHORT).show();
+
         Intent i = new Intent(this,routineInfo.class);
         Bundle b = new Bundle();
         b.putString("trno",s); //tr number

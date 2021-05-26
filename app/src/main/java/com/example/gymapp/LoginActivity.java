@@ -2,6 +2,7 @@ package com.example.gymapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,8 +27,8 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    private TextView AppName, txtforpas, txtsgnup;
-    private Button loginbtn;
+    private TextView AppName, txtforpas;
+    private Button loginbtn,contact;
     private ProgressBar progbar;
     private EditText email, password;
 
@@ -35,10 +36,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-       // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
+
+
+
 
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
@@ -49,11 +52,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginbtn = findViewById(R.id.loginbtn);
         //AppName = findViewById(R.id.AppName);
         txtforpas = findViewById(R.id.txtforpas);
-        txtsgnup = findViewById(R.id.txtsgnup);
+        contact = findViewById(R.id.txtsgnup);
         email = findViewById(R.id.edttxtun);
         password = findViewById(R.id.edttxtpswd);
         loginbtn.setOnClickListener(this);
-        txtsgnup.setOnClickListener(this);
+        contact.setOnClickListener(this);
         txtforpas.setOnClickListener(this);
 
 
@@ -70,6 +73,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.txtforpas:
                 startActivity(new Intent(this, ForgotPassword.class));
                 break;
+            case R.id.txtsgnup:
+                startActivity(new Intent(this,ContactUs.class));
         }
 
     }
@@ -116,4 +121,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
+    //QAvD_BwE
 }
