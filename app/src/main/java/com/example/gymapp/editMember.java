@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -104,7 +106,14 @@ public class editMember extends AppCompatActivity {
 
 
         SimpleDateFormat sdf;
+
         sdf = new SimpleDateFormat("dd/mm/yyyy");
+        try {
+            Date d = sdf.parse(dor.getText().toString());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("members").whereEqualTo("id",id.toString()).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -262,7 +271,6 @@ public class editMember extends AppCompatActivity {
 
         this.startActivity(new Intent(editMember.this,memberList.class));
         finish();
-
         return;
     }
 }

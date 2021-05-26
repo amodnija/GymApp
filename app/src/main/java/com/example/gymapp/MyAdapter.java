@@ -49,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.viewholder> {
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.rv_layout, parent, false);
-
+        context = parent.getContext();
         return new viewholder(view);
     }
 
@@ -133,7 +133,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.viewholder> {
             b.putString("id",s); //member id
             intent.putExtras(b);
             itemView.getContext().startActivity(intent);
-            ((Activity)itemView.getContext()).finish();
+            ((Activity)context).finish();
 
         }
 

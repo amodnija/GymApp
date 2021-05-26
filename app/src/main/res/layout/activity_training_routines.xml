@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E6E6"
     tools:context=".TrainingRoutines">
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Training Routines"
-        android:textSize="40dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_medium"
         android:paddingLeft="10dp"
+        android:text="Training Routines"
+        android:textColor="#4C4B4B"
+        android:textSize="32dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,20 +28,24 @@
         android:layout_height="80dp"
         android:layout_marginTop="30dp"
         android:paddingHorizontal="10dp"
+        app:cardBackgroundColor="#F17753"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Training Routine 1"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Training Routine 1"
+            android:textColor="#4C4B4B"
+            android:textSize="25dp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -46,6 +54,8 @@
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="10dp"
+        app:cardBackgroundColor="#F17753"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,18 +66,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:text="Training Routine 2"
+            android:textColor="#4C4B4B"
             android:textSize="25dp" />
 
 
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="10dp"
+        app:cardBackgroundColor="#F17753"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,8 +93,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:text="Training Routine 3"
+            android:textColor="#4C4B4B"
             android:textSize="25dp" />
 
 

@@ -2,11 +2,14 @@ package com.example.gymapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -17,28 +20,43 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    private TextView AppName, txtforpas, txtsgnup;
-    private Button loginbtn;
+    private TextView AppName, txtforpas;
+    private Button loginbtn,contact;
     private ProgressBar progbar;
     private EditText email, password;
 
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
 
+
+
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            startActivity(new Intent(this, Dashboard.class));
+            finish();
+        }
+
         loginbtn = findViewById(R.id.loginbtn);
-        AppName = findViewById(R.id.AppName);
+        //AppName = findViewById(R.id.AppName);
         txtforpas = findViewById(R.id.txtforpas);
-        txtsgnup = findViewById(R.id.txtsgnup);
+        contact = findViewById(R.id.txtsgnup);
         email = findViewById(R.id.edttxtun);
         password = findViewById(R.id.edttxtpswd);
         loginbtn.setOnClickListener(this);
-        txtsgnup.setOnClickListener(this);
+        contact.setOnClickListener(this);
         txtforpas.setOnClickListener(this);
 
 
@@ -55,6 +73,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.txtforpas:
                 startActivity(new Intent(this, ForgotPassword.class));
                 break;
+            case R.id.txtsgnup:
+                startActivity(new Intent(this,ContactUs.class));
         }
 
     }
@@ -76,14 +96,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         if(pswd.isEmpty()) {
-            email.setError("Password is required!");
-            email.requestFocus();
+            password.setError("Password is required!");
+            password.requestFocus();
             return;
         }
 
         if(pswd.length() < 6) {
-            email.setError("Password should be at least 6 characters!");
-            email.requestFocus();
+            password.setError("Password should be at least 6 characters!");
+            password.requestFocus();
             return;
         }
 
@@ -92,7 +112,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this, DummyActivity.class));
+                    startActivity(new Intent(LoginActivity.this, Dashboard.class));
+                    finish();
 
                 }else{
                     Toast.makeText(LoginActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
@@ -100,4 +121,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
+    //QAvD_BwE
 }
