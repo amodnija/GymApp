@@ -271,7 +271,6 @@ public class editMember extends AppCompatActivity {
 
         this.startActivity(new Intent(editMember.this,memberList.class));
         finish();
-
         return;
     }
 }
