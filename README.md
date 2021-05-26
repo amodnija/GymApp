@@ -16,6 +16,6 @@ add staff members to handle the database, and assign and manage the training rou
 
 ## Contributors
 Made with :heart: and :muscle: by Amod, Bhavya and Siddh    
-Amod Nijasure: Sign in and Authentication  
-Bhavya Somani: UI/UX  
-Siddh Gosar: Database Management (Adding members, Member List and Training Routine Management)  
+* Amod Nijasure : Sign in and Authentication  
+* Bhavya Somani : UI/UX  
+* Siddh Gosar : Database Management (Adding members, Member List and Training Routine Management)  
