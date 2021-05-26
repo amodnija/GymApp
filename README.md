@@ -7,12 +7,17 @@ add staff members to handle the database, and assign and manage the training rou
 
 * The add member feature allows the admin to add new members to the databasewith all thier essential details like Name,gender,Image,Phone number,Email address,Joining                 date,Membership tenure,Id No and Training routines.
 
-* The add staff feature allows the admin to add new staff members to maintain the database.In this the admin can create the login credentials for the staff and also provide admin     access if needed.
+* The add staff feature allows the admin to add new staff members to maintain the database.In this the admin can create the login credentials for the staff and also provide admin access if needed.
 
 * The MemberList feature displays the list of all current members of the gym displaying their name,photo and Id,it also gives the edit detail option.
 
-* The Training Routine feature shows the training routines available with their brief description,each trainig rotine also displays the list of members following the routine and     also provides with the ability to add users to a routine.
+* The Training Routine feature shows the training routines available with their brief description,each trainig rotine also displays the list of members following the routine and also provides with the ability to add users to a routine.
 
+## Video Link  
+https://drive.google.com/file/d/1Dj7UxvKhDG4TZNUlrdV_exTciCYchfug/view?usp=drivesdk
+
+## APK Link  
+https://drive.google.com/file/d/1DnszkbysIB9nhv7iju-bhoS1LlP4OLPl/view?usp=drivesdk
 
 ## Contributors
 Made with :heart: and :muscle: by Amod, Bhavya and Siddh    
