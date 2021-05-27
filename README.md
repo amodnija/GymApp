@@ -32,4 +32,4 @@ Made with :heart: and :muscle: by Amod, Bhavya and Siddh
 ## Learnings
 We learned to use various tools for Native Android App Development such as Recyclerviews, Firebase Authentication, Database Management (both Firestore and RTDB) and Figma Basics along with numerous XML features which helped us in making a more aesthetic and responsive UI/UX. We also made a conscious effort to follow good development practices like using Git/Github as effeciently as possible and working as a team with proper task division.
 
-Lastly a Big Thanks to our mentor Ayush Sharma bhaiya for guiding and helping us throughout our DevSoc journey till date.
+Lastly a Big Thanks to our mentor Ayush bhaiya for guiding and helping us throughout our DevSoc journey till date.
