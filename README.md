@@ -3,7 +3,7 @@
 ### :rocket: Your One-stop destination Gym management App.
 
 With this app we provide our customers with a user-friendly system to manage their gyms. The numerous functionalities provided in the app allows the admin to add new members, edit the details of exiting users,
-add staff members to handle the database, and assign and manage the training routines of the members.
+add staff members to handle the database, and assign and manage the training routines of the members. A contact us page has been provided consisting our Email-id and address in case any new user wants to contact us for creating a new admin account.
 
 * The add member feature allows the admin to add new members to the databasewith all thier essential details like Name,gender,Image,Phone number,Email address,Joining                 date,Membership tenure,Id No and Training routines.
 
@@ -18,6 +18,9 @@ https://drive.google.com/file/d/1Dj7UxvKhDG4TZNUlrdV_exTciCYchfug/view?usp=drive
 
 ## APK Link  
 https://drive.google.com/file/d/1DnszkbysIB9nhv7iju-bhoS1LlP4OLPl/view?usp=drivesdk
+
+USERNAME: testing@yolo.com
+PASSWORD: testing
 
 ## Contributors
 Made with :heart: and :muscle: by Amod, Bhavya and Siddh    
